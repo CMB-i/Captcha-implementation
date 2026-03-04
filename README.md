@@ -23,6 +23,19 @@ Rules:
 - If solved correctly: The user is marked as human verified.
 - If all attempts fail: The system displays a message indicating non-human behavior.
 
+## How to run:
+- intsall python
+- install Flask:
+```
+pip install flask
+```
+- run:
+```
+python server.py
+```
+you should see:  ```'Running on http://127.0.0.1:5000'```
+- Open the demo in your browser
+
 ## Features
 - Interactive 3×3 CAPTCHA grid
 - Randomized icons for each challenge
