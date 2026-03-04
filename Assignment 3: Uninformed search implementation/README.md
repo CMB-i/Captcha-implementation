@@ -183,7 +183,7 @@ Clone the repository:
 Run the program:
 
 ```bash
-python water_jug_search.py
+python uninformed_search.py
 ```
 
 ---
