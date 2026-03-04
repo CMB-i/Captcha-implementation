@@ -71,7 +71,7 @@ class WaterJugProblem:
         return (self.cap_a + 1) * (self.cap_b + 1)
 
 
-# -----------------------------
+
 # Path Reconstruction helpers
 # -----------------------------
 def reconstruct(parent: Dict[State, Tuple[Optional[State], Optional[Action]]], goal: State):
@@ -90,9 +90,9 @@ def reconstruct(parent: Dict[State, Tuple[Optional[State], Optional[Action]]], g
     return states, actions
 
 
-# -----------------------------
+
 # BFS (Graph Search)
-# -----------------------------
+
 def bfs(problem: WaterJugProblem) -> Result:
     t0 = time.perf_counter()
     start = problem.start()
@@ -124,9 +124,9 @@ def bfs(problem: WaterJugProblem) -> Result:
     return Result(False, [], [], nodes_expanded, max_frontier, t1 - t0, None)
 
 
-# -----------------------------
+
 # DFS (Graph Search)
-# -----------------------------
+
 def dfs(problem: WaterJugProblem) -> Result:
     t0 = time.perf_counter()
     start = problem.start()
@@ -161,9 +161,9 @@ def dfs(problem: WaterJugProblem) -> Result:
     return Result(False, [], [], nodes_expanded, max_frontier, t1 - t0, None)
 
 
-# -----------------------------
+
 # Depth-Limited DFS (DLS)
-# -----------------------------
+
 def dls(problem: WaterJugProblem, limit: int) -> Result:
     t0 = time.perf_counter()
     start = problem.start()
@@ -200,9 +200,9 @@ def dls(problem: WaterJugProblem, limit: int) -> Result:
     return Result(False, [], [], nodes_expanded, max_frontier, t1 - t0, None)
 
 
-# -----------------------------
+
 # Iterative Deepening DFS (IDDFS)
-# -----------------------------
+
 def iddfs(problem: WaterJugProblem, max_depth: int) -> Result:
     t0 = time.perf_counter()
 
@@ -220,10 +220,8 @@ def iddfs(problem: WaterJugProblem, max_depth: int) -> Result:
     t1 = time.perf_counter()
     return Result(False, [], [], total_expanded, overall_max_frontier, t1 - t0, None)
 
+# printing + comparison
 
-# -----------------------------
-# Pretty printing + comparison
-# -----------------------------
 def print_solution(res: Result):
     if not res.found:
         print("No solution found.")
@@ -258,7 +256,7 @@ def compare(problem: WaterJugProblem, dls_limit: int = 10, iddfs_max_depth: int 
         results.append((name, r))
         print(f"{name:<12} {str(r.found):<6} {str(r.depth):<6} {r.nodes_expanded:<10} {r.max_frontier_size:<12} {r.time_sec:<10.6f}")
 
-    # Show one example path (prefer BFS if found)
+    # exmaple
     chosen = None
     for name, r in results:
         if name == "BFS" and r.found:
