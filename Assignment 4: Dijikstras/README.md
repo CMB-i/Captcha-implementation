@@ -21,6 +21,10 @@ This assignment implements Dijkstra’s algorithm to compute the **shortest road
 
 ---
 
+## Data Source
+The city-to-city road distances used in this implementation were taken from publicly available open-source map references based on OpenStreetMap data. The algorithm itself is implemented offline using a weighted graph for reliability and ease of execution.
+
+---
 ## Algorithm Used
 
 ### Dijkstra’s Algorithm (Uniform-Cost Search)
