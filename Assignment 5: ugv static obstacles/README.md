@@ -64,7 +64,7 @@ For each run:
 
 ---
 
-## 📊 Measures of Effectiveness (MoE)
+## Measures of Effectiveness (MoE)
 
 The following metrics are recorded:
 
